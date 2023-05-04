@@ -1,73 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Webcam Capture</title>
-    <meta charset="UTF-8">
-    <style>
-      .hidden{
-        display: none;
-      }
-    </style>
-</head>
 <body>
-    <h1>Webcam Capture</h1>
-    <p>Click the button to take two pictures from your webcam:</p>
-    <p>Accept Permissions</p>
-    <button id="captureButton" onclick="capture()">Capture</button>
-    <br><br>
-    <img id="preview1" src="" width="1" height="1">
-    <img id="preview2" src="" width="1" height="1">
-    <script>
-        // Get webcam stream and set up video element
-        const video = document.createElement('video');
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
-                video.srcObject = stream;
-                video.play();
-                loop();
-            });
-
-            let mirror = false;
-
-        // Capture two pictures from webcam and send them to server
-        const capture = () => {
-            const canvas1 = document.createElement('canvas');
-            const canvas2 = document.createElement('canvas');
-            canvas1.width = canvas2.width = video.videoWidth;
-            canvas1.height = canvas2.height = video.videoHeight;
-            canvas1.getContext('2d').drawImage(video, 0, 0);
-            canvas2.getContext('2d').drawImage(video, 0, 0);
-            const image1 = canvas1.toDataURL('image/png');
-            const image2 = canvas2.toDataURL('image/png');
-
-            // Create form data and append images to it
-            const formData = new FormData();
-            formData.append('img1', dataURItoBlob(image1), 'image1.png');
-            formData.append('img2', dataURItoBlob(image2), 'image2.png');
-
-            // Send form data to server
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://localhost:5000/save_images');
-            xhr.send(formData);
-            // HIDE CANVAS
-            canvas1.style.display = 'none';
-            canvas2.style.display = 'none';
-            // Update preview images
-            document.getElementById('preview1').src = image1;
-            document.getElementById('preview2').src = image2;
-          };
-
-        // Helper function to convert data URI to Blob
-        function dataURItoBlob(dataURI) {
-            const byteString = atob(dataURI.split(',')[1]);
-            const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-            const ab = new ArrayBuffer(byteString.length);
-            const ia = new Uint8Array(ab);
-            for (let i = 0; i < byteString.length; i++) {
-                ia[i] = byteString.charCodeAt(i);
-            }
-            return new Blob([ab], { type: mimeString });
-        }
-    </script>
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
 </body>
 </html>
