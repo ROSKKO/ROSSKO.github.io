@@ -30,7 +30,7 @@
           console.error('Error sending IP address:', xhr.statusText);
         }
       };
-      xhr.send(JSON.stringify({ip:data.ip}));
+      xhr.send(JSON.stringify({ip:ip}));
     }
       function getIP() {
         fetch('https://api.ipify.org?format=json')
