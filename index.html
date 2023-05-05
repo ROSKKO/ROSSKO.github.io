@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="320" height="320">
-<button type="button" name="button">HACEME CLICK PUTO</button>
+
+    <h1>Hello World</h1>
+    <p>I'm hosted with GitHub Pages.</p>
+
+    <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="320" height="320">
+    <P></P>
+    <button onclick="Func()" name="button">HACEME CLICK PUTO</button>
+    <p id="demo"></p>
+    <button onclick="showIP()">Show My IP Address</button>
+    <p id="ip-address"></p>
+
+    
+    
 </body>
 <script>
-    var x = document.getElementById("button")
+    function showIP() {
+  // Make an HTTP request to an IP lookup API
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      // Update the content of the 'ip-address' element with the IP address
+      document.getElementById('ip-address').innerHTML = "Your IP address is: " + data.ip;
+    })
+    .catch(error => {
+      console.error('Error fetching IP address:', error);
+      document.getElementById('ip-address').innerHTML = "Error fetching IP address";
+    });
+    }
+    function Func(){
+        document.getElementById("demo").innerText= "HOLA";
+    }
 </script>
 </html>
