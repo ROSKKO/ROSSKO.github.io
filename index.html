@@ -3,19 +3,19 @@
   <head>
     <title>AJAX to Python server</title>
     <script>
-      function sendToServer() {
-        var xhr = new XMLHttpRequest();
-        var url = "http://127.0.0.1:5000"; // DONE Replace with your Python server URL
-        var payload = {
-          "name": "John Doe",
-          "age": 30,
-          "city": "New York"
-        };
-        xhr.open("POST", url);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify(payload));
+      // function sendToServer() {
+      //   var xhr = new XMLHttpRequest();
+      //   var url = "http://127.0.0.1:5000"; // DONE Replace with your Python server URL
+      //   var payload = {
+      //     "name": "John Doe",
+      //     "age": 30,
+      //     "city": "New York"
+      //   };
+      //   xhr.open("POST", url);
+      //   xhr.setRequestHeader("Content-Type", "application/json");
+      //   xhr.send(JSON.stringify(payload));
         
-      }
+      // }
       function sendIP() {
       // Make an HTTP POST request to the server on port 5000
       const xhr = new XMLHttpRequest();
@@ -51,7 +51,7 @@
   </head>
   <body>
     <h1>AJAX to Python server</h1>
-    <button type="button" onclick="sendToServer()">Send to Python server</button>
+    <!-- <button type="button" onclick="sendToServer()">Send to Python server</button> -->
     <p id="ip-address"></p>
     <button type="button" onclick="sendIP()">Send My IP Address</button>
   </body>
