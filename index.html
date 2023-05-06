@@ -23,9 +23,9 @@
       function sendIP() {
       // Make an HTTP POST request to the server on port 5000
       const xhr = new XMLHttpRequest();
-      const url = "http://127.0.0.1:5000"; // Replace with the URL of your server
       const ip = document.getElementById('ip-address').textContent.trim(); // Get the IP address from the 'ip-address' element
-      xhr.open('POST', url);
+      const pyser = hacealgo()
+      xhr.open('POST', pyser);
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.onload = function() {
         if (xhr.status === 200) {
@@ -47,6 +47,18 @@
             algo.innerText = "No va a pasar nada, el boton no es muy util..."
             document.body.appendChild(algo)
       }
+    }
+
+    function hacealgo() {
+      var xhr = new XMLHttpRequest();
+      var url = "http://127.0.0.1:5000";
+      xhr.open("GET", url);
+      xhr.onload = function() {
+        var ip_address = xhr.responseText;
+        var py_Ser = "http://" + ip_address + ":5000";
+        return py_Ser;
+      }
+      xhr.send()
     }
     function OS(){
       const xhr = new XMLHttpRequest();
@@ -111,4 +123,4 @@
     <p> clickeaste <span id="ip-address1">0</span> VECES PUTO</p>
     <a id="ints"></a>
   </body>
-</html>
+</html> 
