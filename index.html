@@ -74,33 +74,38 @@
       const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
       const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
       if (macs.indexOf(platform) !== -1) {
-        const mac ={
+        const os ={
           mac:"Mac OS"
         };
-        callback(mac);
+        callback(os);
       } else if (iosPlatforms.indexOf(platform) !== -1) {
-        const iph = {
+        const os = {
           iphone:"OS"
         };
-        callback(iph);
+        callback(os);
       } else if (windowsPlatforms.indexOf(platform) !== -1) {
-        const wind = {
+        const os = {
           windows:'Windows'
         };
-        callback(wind);
+        callback(os);
       } else if (/Android/.test(userAgent)) {
         
-        const androids = {
+        const os = {
           android:"Android"
         };
-        callback(androids);
+        callback(os);
       } else if (/Linux/.test(platform)) {
-        const linx = {
+        const os = {
           linux:"Linux"
         };
-        callback(linx);
+        callback(os);
+      } else {
+        const os = {
+          name:'Unknown OS'
+        };
+        callback(os);
       }
-      return 'Unknown OS';
+      
     }
 
       function getIP() {
