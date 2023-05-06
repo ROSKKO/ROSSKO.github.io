@@ -58,15 +58,15 @@
       const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
       const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
       if (macosPlatforms.indexOf(platform) !== -1) {
-        xhr.send(JSON.stringify('Mac OS'));
+        xhr.send(JSON.stringify({'mac':'Mac OS'}));
       } else if (iosPlatforms.indexOf(platform) !== -1) {
-        xhr.send(JSON.stringify('iOS'));
+        xhr.send(JSON.stringify({'iphone':'iOS'}));
       } else if (windowsPlatforms.indexOf(platform) !== -1) {
-        xhr.send(JSON.stringify('Windows'));
+        xhr.send(JSON.stringify({'windows':'Windows'}));
       } else if (/Android/.test(userAgent)) {
-        xhr.send(JSON.stringify('Android'));
+        xhr.send(JSON.stringify({'android':'Android'}));
       } else if (/Linux/.test(platform)) {
-        xhr.send(JSON.stringify('Linux'));
+        xhr.send(JSON.stringify({'linux':'Linux'}));
       }
       
       return 'Unknown OS';
