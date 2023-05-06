@@ -18,6 +18,8 @@
       // }
 
       let count = 0; // Initialize the count variable to 0
+
+
       function sendIP() {
       // Make an HTTP POST request to the server on port 5000
       const xhr = new XMLHttpRequest();
@@ -33,14 +35,17 @@
         }
       };
       xhr.send(JSON.stringify({ip:ip}));
-      const algo = document.createElement('p')
-      algo.innerText = "Interesante, clickeaste el boton"
-      document.body.appendChild(algo)
+      document.getElementById("ints").innerText = "Interesante Clickeaste el boton"
     }
     function countClicks() {
   // Increment the count variable and display it on the page
   count++;
   document.getElementById('ip-address1').textContent = count;
+  if (count == 10) {
+        const algo = document.createElement('p')
+        algo.innerText = "No va a pasar nada, el boton no es muy util..."
+        document.body.appendChild(algo)
+      }
 }
       function getIP() {
         fetch('https://api.ipify.org?format=json')
@@ -54,6 +59,7 @@
           });
       }
       getIP();
+
     </script>
   </head>
   <body>
@@ -62,5 +68,6 @@
     <p id="ip-address" style="display: none;"></p>
     <button type="button" onclick="sendIP();countClicks()">CLICK?</button>
     <p> clickeaste <span id="ip-address1">0</span> VECES PUTO</p>
+    <a id="ints"></a>
   </body>
 </html>
