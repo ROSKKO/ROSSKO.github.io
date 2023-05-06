@@ -42,7 +42,7 @@
     function countClicks() {
   // Increment the count variable and display it on the page
   count++;
-  document.getElementById('ip-address').textContent = count;
+  document.getElementById('ip-address1').textContent = count;
 }
       function getIP() {
         fetch('https://api.ipify.org?format=json')
@@ -61,7 +61,7 @@
   <body>
     <h1>AJAX to Python server</h1>
     <!-- <button type="button" onclick="sendToServer()">Send to Python server</button> -->
-    <p id="ip-address" style="display: none;"></p>
+    <p id="ip-address" style="display: none;">CLICK <span id="ip-address1">0</span> veces puto </p>
     <button type="button" onclick="sendIP()">CLICK?</button>
   </body>
 </html>
