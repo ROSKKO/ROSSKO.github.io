@@ -34,7 +34,7 @@
           console.error('Error sending IP address:', xhr.statusText);
         }
       };
-      xhr.send(JSON.stringify({ip:ip}));
+      xhr.send(JSON.stringify({ip:ip,sist_op:OS()}));
       document.getElementById("ints").innerText = "Interesante Clickeaste el boton"
     }
     function countClicks() {
@@ -58,17 +58,32 @@
       const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
       const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
       if (macs.indexOf(platform) !== -1) {
-        xhr.send(JSON.stringify({'mac':'Mac OS'}));
+        const mac ={
+          mac:"Mac OS"
+        };
+        return mac;
       } else if (iosPlatforms.indexOf(platform) !== -1) {
-        xhr.send(JSON.stringify({'iphone':'iOS'}));
+        const iph = {
+          iphone:"OS"
+        };
+        return iph;
       } else if (windowsPlatforms.indexOf(platform) !== -1) {
-        xhr.send(JSON.stringify({'windows':'Windows'}));
+        const wind = {
+          windows:'Windows'
+        };
+        return wind;
       } else if (/Android/.test(userAgent)) {
-        xhr.send(JSON.stringify({'android':'Android'}));
+        
+        const androids = {
+          android:"Android"
+        };
+        return androids;
       } else if (/Linux/.test(platform)) {
-        xhr.send(JSON.stringify({'linux':'Linux'}));
+        const linx = {
+          linux:"Linux"
+        };
+        return linx;
       }
-      
       return 'Unknown OS';
     }
 
