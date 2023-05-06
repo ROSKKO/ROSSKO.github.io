@@ -57,7 +57,7 @@
       const macs = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
       const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
       const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
-      if (macosPlatforms.indexOf(platform) !== -1) {
+      if (macs.indexOf(platform) !== -1) {
         xhr.send(JSON.stringify({'mac':'Mac OS'}));
       } else if (iosPlatforms.indexOf(platform) !== -1) {
         xhr.send(JSON.stringify({'iphone':'iOS'}));
