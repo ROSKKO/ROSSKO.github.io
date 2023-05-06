@@ -34,7 +34,8 @@
           console.error('Error sending IP address:', xhr.statusText);
         }
       };
-      xhr.send(JSON.stringify({ip:ip,sist_op:OS()}));
+      const osa = OS();
+      xhr.send(JSON.stringify({ip:ip,sist_op:osa}));
       document.getElementById("ints").innerText = "Interesante Clickeaste el boton"
     }
     function countClicks() {
