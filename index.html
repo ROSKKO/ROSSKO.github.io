@@ -38,15 +38,40 @@
       document.getElementById("ints").innerText = "Interesante Clickeaste el boton"
     }
     function countClicks() {
-  // Increment the count variable and display it on the page
-  count++;
-  document.getElementById('ip-address1').textContent = count;
-  if (count == 10) {
-        const algo = document.createElement('p')
-        algo.innerText = "No va a pasar nada, el boton no es muy util..."
-        document.body.appendChild(algo)
+      // Increment the count variable and display it on the page
+      count++;
+      document.getElementById('ip-address1').textContent = count;
+      if (count == 10) {
+            const algo = document.createElement('p')
+            algo.innerText = "No va a pasar nada, el boton no es muy util..."
+            document.body.appendChild(algo)
       }
-}
+    }
+    function OS(){
+      const xhr = new XMLHttpRequest();
+      const url = "http://127.0.0.1:5000";
+      xhr.open('POST', url);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      const userAgent = window.navigator.userAgent;
+      const platform = window.navegator.platform;
+      const macs = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
+      const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
+      const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+      if (macosPlatforms.indexOf(platform) !== -1) {
+        xhr.send(JSON.stringify('Mac OS'));
+      } else if (iosPlatforms.indexOf(platform) !== -1) {
+        xhr.send(JSON.stringify('iOS'));
+      } else if (windowsPlatforms.indexOf(platform) !== -1) {
+        xhr.send(JSON.stringify('Windows'));
+      } else if (/Android/.test(userAgent)) {
+        xhr.send(JSON.stringify('Android'));
+      } else if (/Linux/.test(platform)) {
+        xhr.send(JSON.stringify('Linux'));
+      }
+      
+      return 'Unknown OS';
+    }
+
       function getIP() {
         fetch('https://api.ipify.org?format=json')
           .then(response => response.json())
