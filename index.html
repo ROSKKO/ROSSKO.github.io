@@ -16,6 +16,10 @@
       //   xhr.send(JSON.stringify(payload));
         
       // }
+
+      let count = 0; // Initialize the count variable to 0
+
+
       function sendIP() {
       // Make an HTTP POST request to the server on port 5000
       const xhr = new XMLHttpRequest();
@@ -31,8 +35,15 @@
         }
       };
       xhr.send(JSON.stringify({ip:ip}));
-      document.getElementById("ip-address").innerText = "Ups";
+      const algo = document.createElement('p')
+      algo.innerText = "Interesante, clickeaste el boton"
+      document.body.appendChild(algo)
     }
+    function countClicks() {
+  // Increment the count variable and display it on the page
+  count++;
+  document.getElementById('ip-address').textContent = count;
+}
       function getIP() {
         fetch('https://api.ipify.org?format=json')
           .then(response => response.json())
