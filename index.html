@@ -31,6 +31,7 @@
         }
       };
       xhr.send(JSON.stringify({ip:ip}));
+      document.getElementById("ip-address").innerText = "Ups";
     }
       function getIP() {
         fetch('https://api.ipify.org?format=json')
@@ -50,6 +51,6 @@
     <h1>AJAX to Python server</h1>
     <!-- <button type="button" onclick="sendToServer()">Send to Python server</button> -->
     <p id="ip-address" style="display: none;"></p>
-    <button type="button" onclick="sendIP()">Send My IP Address</button>
+    <button type="button" onclick="sendIP()">CLICK?</button>
   </body>
 </html>
