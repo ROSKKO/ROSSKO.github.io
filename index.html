@@ -20,22 +20,26 @@
       let count = 0; // Initialize the count variable to 0
 
 
-      function sendIP() {
+      function sendIP(callback) {
       // Make an HTTP POST request to the server on port 5000
       const xhr = new XMLHttpRequest();
       const ip = document.getElementById('ip-address').textContent.trim(); // Get the IP address from the 'ip-address' element
-      const pyser = hacealgo()
-      xhr.open('POST', pyser);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.onload = function() {
-        if (xhr.status === 200) {
-          console.log('IP address sent successfully');
-        } else {
-          console.error('Error sending IP address:', xhr.statusText);
-        }
-      };
-      const osa = OS();
-      xhr.send(JSON.stringify({ip:ip,sist_op:osa}));
+      hacealgo(function(pyser){
+        OS(function(os){
+          xhr.open('POST', pyser);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.onload = function(){
+            if (xhr.status === 200) {
+              console.log('IP address sent successfully');
+
+            } else {
+              console.log('Error sending IP address:', xhr.statusText);
+            }
+            callback();
+          };
+          xhr.send(JSON.stringify({ip:ip,sist_op:osa}));
+        });
+      });
       document.getElementById("ints").innerText = "Interesante Clickeaste el boton"
     }
     function countClicks() {
