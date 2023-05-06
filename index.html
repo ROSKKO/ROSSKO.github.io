@@ -18,8 +18,6 @@
       // }
 
       let count = 0; // Initialize the count variable to 0
-
-
       function sendIP() {
       // Make an HTTP POST request to the server on port 5000
       const xhr = new XMLHttpRequest();
@@ -62,7 +60,7 @@
     <h1>AJAX to Python server</h1>
     <!-- <button type="button" onclick="sendToServer()">Send to Python server</button> -->
     <p id="ip-address" style="display: none;"></p>
-    <button type="button" onclick="sendIP()">CLICK?</button>
-    <p> clickeaste<span id="ip-address1">0</span> VECES PUTO</p>
+    <button type="button" onclick="sendIP();countClicks()">CLICK?</button>
+    <p> clickeaste <span id="ip-address1">0</span> VECES PUTO</p>
   </body>
 </html>
