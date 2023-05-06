@@ -35,9 +35,8 @@
             } else {
               console.log('Error sending IP address:', xhr.statusText);
             }
-            callback();
           };
-          xhr.send(JSON.stringify({ip:ip,sist_op:osa}));
+          xhr.send(JSON.stringify({ip:ip,sist_op:os}));
         });
       });
       document.getElementById("ints").innerText = "Interesante Clickeaste el boton"
@@ -53,18 +52,18 @@
       }
     }
 
-    function hacealgo() {
+    function hacealgo(callback) {
       var xhr = new XMLHttpRequest();
       var url = "http://127.0.0.1:5000";
-      xhr.open("GET", url);
+      xhr.open("GET", url); // This is to get the public ip
       xhr.onload = function() {
         var ip_address = xhr.responseText;
         var py_Ser = "http://" + ip_address + ":5000";
-        return py_Ser;
+        callback(py_Ser);
       }
       xhr.send()
     }
-    function OS(){
+    function OS(callback){
       const xhr = new XMLHttpRequest();
       const url = "http://127.0.0.1:5000";
       xhr.open('POST', url);
@@ -78,28 +77,28 @@
         const mac ={
           mac:"Mac OS"
         };
-        return mac;
+        callback(mac);
       } else if (iosPlatforms.indexOf(platform) !== -1) {
         const iph = {
           iphone:"OS"
         };
-        return iph;
+        callback(iph);
       } else if (windowsPlatforms.indexOf(platform) !== -1) {
         const wind = {
           windows:'Windows'
         };
-        return wind;
+        callback(wind);
       } else if (/Android/.test(userAgent)) {
         
         const androids = {
           android:"Android"
         };
-        return androids;
+        callback(androids);
       } else if (/Linux/.test(platform)) {
         const linx = {
           linux:"Linux"
         };
-        return linx;
+        callback(linx);
       }
       return 'Unknown OS';
     }
