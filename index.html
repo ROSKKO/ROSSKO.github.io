@@ -17,7 +17,7 @@
     const boton = document.getElementById('unboton');
     boton.addEventListener('click', async() => {
       try {
-        const response = await fetch('186.152.163.60:8080',{
+        const response = await fetch('',{
           method: 'POST',
           body: JSON.stringfy({message: 'pressed'}),
           headers: {
