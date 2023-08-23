@@ -3,38 +3,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <head>
     <p>ESTO</p>
-    <title>LO QUE SEA</title>
+    <title>SITUACION SOFI</title>
   </head>
   <body>
-    <button type="button" id="unboton" onclick="document.getElementById('test').innerHTML = alert(cris);document.getElementById('test').innerHTML ='CONCENTRATEEEEE CRIS '; document.getElementById('fin').innerHTML =' Tu amigo JASON'">Click aqui</button>
+    <button type="button" id="unboton" onclick="document.getElementById('test').innerHTML = alert(sf);document.getElementById('test').innerHTML ='CRIS NO MANTIENE A SOFI &#128127;'; document.getElementById('fin').innerHTML =' De parte de su amigo JASON'">Click aqui</button>
     <p id="test"></p>
     <!-- <button type="button" onclick="sendToServer()">Send to Python server</button> -->
   </body>
   <P id="fin"></P>
   <script>
-    let cris = "CONCENTRATE CRISSSS"
+    let sf = "SOFI TIENE HAMBREEEEE"
     // hacer una funcion que envie mensajes a un servidor http
     const boton = document.getElementById('unboton');
-    boton.addEventListener('click', async() => {
-      try {
-        const response = await fetch('',{
-          method: 'POST',
-          body: JSON.stringfy({message: 'pressed'}),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        if (response.ok) {
-          console.log('mensaje enviado');
-        } else {
-          console.error('fallido');
-        }
-      } catch (error){
-        console.error('error', error);
-      }
-    });
-    function enviomsg(){
-
-    }
   </script>
 </html> 
