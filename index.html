@@ -2,18 +2,30 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <p>ESTO</p>
+    <p>CLICK EL BOTON PLEASE</p>
     <title>SITUACION SOFI</title>
+    <style>
+      .boton {
+        color: crimson;
+        background-color: lightblue;
+        font-size: 18px;
+        cursor: crosshair;
+      }
+    </style>
   </head>
   <body>
-    <button type="button" id="unboton" onclick="document.getElementById('test').innerHTML = alert(sf);document.getElementById('test').innerHTML ='CRIS NO MANTIENE A SOFI &#128127;'; document.getElementById('fin').innerHTML =' De parte de su amigo JASON'">Click aqui</button>
+    <button type="button" class="boton" id="unboton" onclick="document.getElementById('test').innerHTML = alert(sf);document.getElementById('test').innerHTML ='CRIS NO MANTIENE A SOFI &#128127;'; document.getElementById('fin').innerHTML =' De parte de su amigo JASON'">Click aqui</button>
     <p id="test"></p>
     <!-- <button type="button" onclick="sendToServer()">Send to Python server</button> -->
   </body>
   <P id="fin"></P>
+  <h1 id="vieja"></h1>
   <script>
     let sf = "SOFI TIENE HAMBREEEEE"
     // hacer una funcion que envie mensajes a un servidor http
-    const boton = document.getElementById('unboton');
+    const boton1 = document.getElementById('unboton');
+    function gay(){
+
+    }
   </script>
 </html> 
