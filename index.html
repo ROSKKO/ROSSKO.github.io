@@ -1,31 +1,185 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <p>CLICK EL BOTON PLEASE</p>
-    <title>SITUACION SOFI</title>
+    <title>MENSAJE DE JASON</title>
     <style>
+      
+      .container {
+        border: 10px outset;
+        border-color: black;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        
+      }
+
+      .container .btn{
+        position: relative;
+        left: 10%;
+        right: 50%;
+        text-align: center;
+        background-color: chocolate;
+        
+        padding: 30px 50px;
+        cursor: cell;
+        border-radius: 15px;
+        box-shadow: 0 5px #5a5555;
+        transition-duration: 1s;
+        
+      }
+
+      .container .btn:hover{
+        color: brown;
+        transition: 1s;
+        background-color: aqua;
+        
+      }
+
+      .container .btn:active{
+        background-color: black;
+        transition: 2s;
+        transform: translateY(2px);
+      }
+      .container .btn:active::after{
+        padding: 15px;
+        opacity: 1;
+        transition: 0.5s;
+      }
+
+
+      header{
+        text-align: center;
+        font-size: 50px;
+      }
       .boton {
+        position:relative;
+        right: -46%;
+        
         color: crimson;
         background-color: lightblue;
         font-size: 18px;
-        cursor: crosshair;
+        cursor:cell ;
+        text-align: center;
+        border-radius: 15px;
       }
+
+      .proyect1{
+        /* position: fixed;
+        background-color: lightblue;
+        font-size: 15px;
+        text-align: center;
+        border: solid;
+        border-color: lightblue;
+        max-width: 100%;
+        width: 100%; */
+        margin: 0;
+        overflow: hidden;
+        background-color: gray;
+        text-align: center;
+        
+      }
+
+      .proyect1 .btn2{
+        position: relative;
+        border-radius: 10px;
+        left: 20%;
+        box-shadow: 0 2px gray;
+        padding: 5px 20px;
+        float: left;
+      }
+
+      .proyect1 .barras{
+        position: fixed;
+        left: 0;
+        padding: 5px 20px;
+        font-size: 18px;
+        background-color: cyan;
+      }
+
+      .proyect1 .barras:focus{
+        background-color: darkcyan;
+      }
+
+      .proyect1 .dropcont{
+        display: none;
+        position: absolute;
+        min-width: 200px;
+        overflow: visible;
+      }
+      .proyect1 .dropcont a{
+        font-size: 18px;
+        display: block;
+      }
+      .proyect1 .show{
+        display: block;
+      }
+      #grad1{
+        border-radius: 10px;
+        background-image: linear-gradient(cyan, gray);
+      }
+
+
     </style>
+    
   </head>
-  <body>
-    <button type="button" class="boton" id="unboton" onclick="document.getElementById('test').innerHTML = alert(sf);document.getElementById('test').innerHTML ='CRIS NO MANTIENE A SOFI &#128127;'; document.getElementById('fin').innerHTML =' De parte de su amigo JASON'">Click aqui</button>
-    <p id="test"></p>
+  <header>CLICK EL PUTO BOTON</header>
+  <!-- LOS MARGENES SON IMPORTANTES PARA SACAR O PONER -->
+  <body style="margin: 0;"> 
+    
+    <!-- <button type="button" class="boton" id="unboton" onclick="document.getElementById('test').innerHTML ='CRIS NO MANTIENE A SOFI &#128127;'; document.getElementById('fin').innerHTML =' De parte de su amigo JASON'">Click aqui</button>
+    <p id="test" style="text-align: center;"></p>
+    <p id="fin" style="text-align: center;"></p> -->
+    <!-- <div class="container">
+      <h1>
+        ILUSION
+        <button type="button" id="gay" class="btn" onclick="desaparicion()">BOTON 2</button>
+      </h1>
+      
+    </div> -->
+    <div class="proyect1">
+      <h1>
+        PROYECT
+        <button type="button" class="barras" id="gay5" onclick="morron1()">&#9776</button>
+        <div class="dropcont" id="grad1">
+          <a href="#HOME">HOME</a>
+          <a href="#About_us">ABOUT US</a>
+          <a href="#Contact">Contact</a>
+        </div>
+        <a href="https://th.bing.com/th/id/R.84fa432245e8ea598fbbb1f5dadacad5?rik=GKIxgh90EOBWSw&pid=ImgRaw&r=0" target="_blank">
+          <button type="button" class="btn2" id="gay2" >TE VEO</button>
+        </a>
+        <a href="https://th.bing.com/th/id/R.3c6c3d1deeb90aceefc049e31bea42e3?rik=0jYkGCjKB4yjWg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fcute-baby-seal-png-my-free-clip-art-of-a-cute-little-baby-seal-6802.png&ehk=fpzKrb323IkAudG7aEsAdg2GBhudv2VF2Pqu0li2mjk%3d&risl=&pid=ImgRaw&r=0" target="_blank">
+          <button type="button" class="btn2" id="gay3">FOCA?</button>
+        </a>
+        <a href="https://th.bing.com/th/id/OIP.cgfP2xs36R-CApO3zHJPCwAAAA?pid=ImgDet&rs=1" target="_blank">
+          <button type="button" class="btn2" id="gay4">GATO?</button>
+        </a>
+      </h1>
+    </div>
+
+    
     <!-- <button type="button" onclick="sendToServer()">Send to Python server</button> -->
   </body>
-  <P id="fin"></P>
+  
+  
   <h1 id="vieja"></h1>
   <script>
-    let sf = "SOFI TIENE HAMBREEEEE"
     // hacer una funcion que envie mensajes a un servidor http
-    const boton1 = document.getElementById('unboton');
-    function gay(){
-
+    const boton1 = document.getElementById('gay');
+    let cont = 0;
+    function desaparicion(){
+      document.getElementById('vieja').innerHTML = 'Click numero ' + cont;
+      cont++;
+      if(cont == 11){
+        document.getElementById('gay').remove();
+        document.getElementById('vieja').innerHTML = 'Llegaste a los 10 Clicks mogolico'
+        document.getElementById('vieja').innerHTML = 'Se borra el boton por tonto'
+      }
+    }
+    function morron1(){
+      document.getElementById('grad1').classList.toggle('show');
     }
   </script>
 </html> 
