@@ -304,7 +304,9 @@
 
     function data(){
       let datav = "testdata.json"
-      fetch(datav)
+      fetch(datav, {
+        credentials:"include",
+      })
       .then(x => x.text())
       .then(y => document.getElementById('data').innerHTML = y);
     }
