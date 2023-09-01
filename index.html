@@ -193,6 +193,26 @@
         
       }
 
+      .proyect3{
+        background-color: burlywood;
+        position: absolute;
+        text-align: center;
+        right: 40%;
+        width: 20%;
+        border-radius: 60px;
+      }
+
+      .proyect3 .btn3{
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 1px 5px 8px red;
+      }
+
+      .proyect3 .btn3:active{
+        box-shadow: 5px 5px 12px rgb(93, 0, 0);
+        transform: translateY(8px);
+      }
+
      
 
 
@@ -236,7 +256,7 @@
     </div>
     <div class="proyect2">
       <h2 class="cartel" id="cartel">
-        <form action="/data.php" method="post">
+        <form action="#NADA" method="get">
           <label for="username">Username:</label>
           <input type="text" id="username" name="username"><br>
           <label for="password">Password:</label>
@@ -244,6 +264,13 @@
           <input type="submit" value="submit" >
         </form>
       </h2>
+    </div>
+    <div class="proyect3">
+      <h1 >
+        <button class="btn3" onclick="data()">DATA</button>
+        <p id="data"></p>
+      </h1>
+
     </div>
 
     
@@ -273,6 +300,13 @@
     function formulario(){
       boton_for.remove()
       document.getElementById('cartel').classList.toggle('show2');
+    }
+
+    function dara(){
+      let data = "data.json"
+      fetch(data)
+      .then(x => x.text())
+      .then(y => document.getElementById('data').innerHTML = y);
     }
   </script>
 </html> 
