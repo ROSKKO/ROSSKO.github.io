@@ -268,10 +268,11 @@
     <div class="proyect3">
       <h1 >
         <button class="btn3" onclick="data()">DATA</button>
-        <p id="data"></p>
+        
       </h1>
 
     </div>
+    <div id="data" style="font-size: 15px;"></div>
 
     
     <!-- <button type="button" onclick="sendToServer()">Send to Python server</button> -->
@@ -304,9 +305,7 @@
 
     function data(){
       let datav = "testdata.json"
-      fetch(datav, {
-        credentials:"include",
-      })
+      fetch(datav)
       .then(x => x.text())
       .then(y => document.getElementById('data').innerHTML = y);
     }
