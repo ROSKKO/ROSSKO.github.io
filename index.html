@@ -302,9 +302,9 @@
       document.getElementById('cartel').classList.toggle('show2');
     }
 
-    function dara(){
-      let data = "data.json"
-      fetch(data)
+    function data(){
+      let datav = "data.json"
+      fetch(datav)
       .then(x => x.text())
       .then(y => document.getElementById('data').innerHTML = y);
     }
