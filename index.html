@@ -303,7 +303,7 @@
     }
 
     function data(){
-      let datav = "data.json"
+      let datav = "testdata.json"
       fetch(datav)
       .then(x => x.text())
       .then(y => document.getElementById('data').innerHTML = y);
