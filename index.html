@@ -280,11 +280,11 @@
     
     <div class="proyect2">
       <h2 class="cartel" id="cartelid">
-        <form id="formu" method="get">
+        <form id="formu" method="post">
           <label for="username">Username:</label>
           <input type="text" id="username" name="username"><br>
           
-          <input type="submit" value="submit" onclick='data()' >
+          <input type="submit" value="Submit" id="formubtn" onclick='data()' >
         </form>
       </h2>
     </div>
@@ -334,6 +334,7 @@
     }
 
     function data(){
+      document.getElementById('formubtn').prevenDeafult();
       
       let datav = "testdata.json";
       var nombre = document.getElementById('username').value;
