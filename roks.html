@@ -100,14 +100,21 @@
         const dia_com = new Date();
         let hora = dia_com.getHours();
         let hora_int = Number.parseInt(hora,10);
-        if(6<hora_int<12){
-            document.getElementById("nuevo").innerHTML = "Buen Día";
+        if(6<hora_int){
+            if(hora_int<12){
+                document.getElementById("nuevo").innerHTML = "Buen Dia";
+            }
         }
-        if(12<hora_int<18){
-            document.getElementById("nuevo").innerHTML = "Buenas Tardes";
+        if(12<hora_int){
+            if(hora_int<18){
+                document.getElementById("nuevo").innerHTML = "Buenas Tardes";
+            }
+            
         }
-        if(18<hora_int<6){
-            document.getElementById("nuevo").innerHTML = "Buenas Noches";
+        if(18<hora_int){
+            if(hora_int<6){
+                document.getElementById("nuevo").innerHTML = "Buenas Noches";
+            }
         }
         
     }
