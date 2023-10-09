@@ -3,32 +3,51 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        @media (max-width:420px){
-            .container{
+        @media only screen and (max-width:425px){
+            .container-s{
                 
                 width:100%;
                 text-align: center;
                 font-size: 20px;
             }
-            .espacio{
+            .espacio-s{
                 position: relative;
                 padding: 0px;
             }
-            .container2{
+            .container2-s{
                 background-color: coral;
                 width:100%;
                 text-align: center;
                 font-size: 15px;
                 border-radius: 15px;
             }
-            .container3{
+            .container3-s{
                 background-color: rgb(168, 94, 67);
                 width: 100%;
                 text-align: center;
                 font-size: 15px;
                 border-radius: 15px;
             }
+            .btn0-s{
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: 40%;
+            background-color: green;
+            border: 1px solid;
+            }
         }
+
+        
+        /* @media (max-width:920px)
+        {
+            .btn0{
+                padding: 10px;
+                border-radius: 10px;
+                margin-left: 130px;
+                background-color: green;
+                border: 1px solid;
+            }
+        } */
 
         .nuevo{
             margin-top: 10px;
@@ -39,13 +58,16 @@
             font-style: oblique;
         }
 
-        .btn0{
-            padding: 10px;
-            border-radius: 10px;
-            margin-left: 130px;
-            background-color: green;
-            border: 1px solid;
+        @media (min-width:510px) {
+            .btn0{
+                padding: 10px;
+                border-radius: 10px;
+                margin-left: 45%;
+                background-color: green;
+                border: 1px solid;
+            }
         }
+        
 
         .btn0:active{
             transform: translateY(10px);
@@ -65,6 +87,22 @@
             border-radius: 10px;
         }
 
+        .container2{
+            background-color: coral;
+            width:100%;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 15px;
+        }
+
+        .container3{
+            background-color: rgb(168, 94, 67);
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 15px;
+        }
+
         
     </style>
     
@@ -82,7 +120,7 @@
         <h1>GRACIAS POR ESTAR &#127801;</h1>
     </div>
     <div class="espacio" id="espa2"></div>
-    <button class="btn0" id="gay3" onclick="fumado()">SIGUIENTE<br>PAG</button>
+    <button class="btn0-s btn0" id="gay3" onclick="fumado()">SIGUIENTE<br>PAG</button>
     
 </body>
 <script>
