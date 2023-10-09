@@ -30,6 +30,33 @@
             }
         }
 
+        .nuevo{
+            margin-top: 10px;
+            background-color: darksalmon;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-style: oblique;
+        }
+
+        .btn0{
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: 130px;
+            background-color: green;
+            border: 1px solid;
+        }
+
+        .btn0:active{
+            transform: translateY(10px);
+            background-color: red;
+        }
+
+        .btn0:active::after{
+            transition: 1s;
+            background-color: green;
+        }
+
         .container{
             background-color: lightcoral;
             /* margin-left: 500px;
@@ -43,19 +70,48 @@
     
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="gay0">
         <h1 id="com">HEY!</h1>
     </div>
-    <div class="espacio"></div>
-    <div class="container2">
+    <div class="espacio" id="espa"></div>
+    <div class="container2" id="gay1">
         <h1>NO TE CONOZCO PERO SOLO TE QUIERO DECIR QUE TENGAS UN BUEN DIA/TARDE/NOCHE </h1>
     </div>
-    <div class="espacio"></div>
-    <div class="container3">
+    <div class="espacio" id="espa1"></div>
+    <div class="container3" id="gay2">
         <h1>GRACIAS POR ESTAR &#127801;</h1>
     </div>
+    <div class="espacio" id="espa2"></div>
+    <button class="btn0" id="gay3" onclick="fumado()">SIGUIENTE<br>PAG</button>
     
 </body>
+<script>
+    function fumado(){
+        document.getElementById("gay0").remove();
+        document.getElementById("gay1").remove();
+        document.getElementById("gay2").remove();
+        document.getElementById("gay3").remove();
+        document.getElementById("espa").remove();
+        document.getElementById("espa1").remove();
+        const unico = document.createElement('h1');
+        unico.id = "nuevo";
+        unico.className = "nuevo";
+        document.getElementById("espa2").appendChild(unico);
+        const dia_com = new Date();
+        let hora = dia_com.getHours();
+        let hora_int = Number.parseInt(hora,10);
+        if(6<hora_int<12){
+            document.getElementById("nuevo").innerHTML = "Buen Día";
+        }
+        if(12<hora_int<18){
+            document.getElementById("nuevo").innerHTML = "Buenas Tardes";
+        }
+        if(18<hora_int<6){
+            document.getElementById("nuevo").innerHTML = "Buenas Noches";
+        }
+        
+    }
+</script>
 
 
 

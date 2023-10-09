@@ -279,7 +279,7 @@
         PROYECT
         <button type="button" class="barras" id="gay5" onclick="morron1()" >&#9776</button>
         <div class="dropcont" id="grad1">
-          <a href="#HOME">HOME</a>
+          <a href="https://roskko.github.io/ROSSKO.github.io/roks.html">FRASES</a>
           <a href="#About_us">ABOUT US</a>
           <a href="#Contact">Contact</a>
         </div>
@@ -293,7 +293,7 @@
           <button type="button" class="btn2" id="gay4">GATO?</button>
         </a>
         <a href="https://roskko.github.io/ROSSKO.github.io/roks.html">
-          <button type="button" class="btn2" id="gay5">ALOJA</button>
+          <button type="button" class="btn2" id="gay5">FRASES</button>
         </a>
         <!-- <button type="button" class="btn2" id="boton_form" onclick="formulario()">FORMS</button> -->
       </h1>
@@ -312,7 +312,7 @@
     <p></p>
     <div class="proyect3" >
       <div class="cartel2" id="pro3id">
-        <h1 >
+        <h1 id="la_data">
           <button class="btn3" onclick="data()">DATA</button>
           
         </h1>
@@ -366,18 +366,6 @@
       document.getElementById("ILUSION").remove()
     }
 
-    function data(){
-      
-      
-      let datav = "testdata.json";
-      var nombre = document.getElementById('username').value;
-      
-      
-      document.getElementById('cartelid').classList.toggle('desap')
-      
-      const diccio = {name:nombre};
-      const dicciojs = JSON.stringify(diccio);
-      document.getElementById('data').innerHTML = dicciojs;
-    }
+    
   </script>
 </html> 
