@@ -103,6 +103,10 @@
             border-radius: 15px;
         }
 
+        .nb{
+            display: none;
+        }
+
         
     </style>
     
@@ -121,6 +125,7 @@
     </div>
     <div class="espacio" id="espa2"></div>
     <button class="btn0-s btn0" id="gay3" onclick="fumado()">SIGUIENTE<br>PAG</button>
+
     
 </body>
 <script>
@@ -132,9 +137,15 @@
         document.getElementById("espa").remove();
         document.getElementById("espa1").remove();
         const unico = document.createElement('h1');
+        const nboton = document.createElement('button');
+        nboton.id = 'nbo';
+        nboton.className = "nb";
         unico.id = "nuevo";
         unico.className = "nuevo";
         document.getElementById("espa2").appendChild(unico);
+        document.getElementById("espa2").appendChild(nboton);
+        document.getElementById('nbo').innerHTML = "INDEX";
+        
         const dia_com = new Date();
         let hora = dia_com.getHours();
         let hora_int = Number.parseInt(hora,10);
