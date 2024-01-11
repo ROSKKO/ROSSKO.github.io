@@ -35,6 +35,30 @@
             background-color: green;
             border: 1px solid;
             }
+            .btn_indx-ss{
+            display: block;
+            position: absolute;
+            width: 500px;
+            margin-left: 40%;
+            }
+
+            a:link, a:visited{
+            padding: 14px 25px;
+            background-color:#f44336;
+            color:white;
+            display: inline-block;
+            margin-left:35%;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            }
+
+            input{
+                margin-left: 18%;
+            }
+
+
+            
         }
 
         
@@ -66,7 +90,35 @@
                 background-color: green;
                 border: 1px solid;
             }
+
+            .btn_indx-s{
+            display: block;
+            position: absolute;
+            width: 500px;
+            margin-left: 45%;
+            }
+
+            a:link, a:visited{
+            padding: 14px 25px;
+            background-color:#f44336;
+            color:white;
+            display: inline-block;
+            margin-left:46%;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            }
+
+            input{
+                margin-left: 44%;
+            }
         }
+
+        h2{
+            text-align: center;
+           
+        }
+        
         
 
         .btn0:active{
@@ -103,16 +155,31 @@
             border-radius: 15px;
         }
 
-        .nb{
-            display: none;
+        .chal{
+            /* width: fit-content; */
+            background-color: red;
+            width: 200px;
+
         }
+
+        .nb{
+            display: block;
+            border-radius: 15px;
+            background-color: salmon;
+            position: absolute;
+            padding: 15px;
+            /* margin: 0;
+            overflow: hidden; */
+        }
+
+        
 
         
     </style>
     
 </head>
 <body>
-    <div class="container" id="gay0">
+    <!-- <div class="container" id="gay0">
         <h1 id="com">HEY!</h1>
     </div>
     <div class="espacio" id="espa"></div>
@@ -125,10 +192,100 @@
     </div>
     <div class="espacio" id="espa2"></div>
     <button class="btn0-s btn0" id="gay3" onclick="fumado()">SIGUIENTE<br>PAG</button>
+    <div>
+        <h1 class="btn_indx-s btn_indx-ss">
+            <a style="background-color: red;" href="https://roskko.github.io/ROSSKO.github.io/index.html">
+                <button type="button" class="nb">INDEX</button>
+            </a>
+        </h1>
+    </div> -->
+
+    <H1 style="text-align: center;">Ingrese su nombre:</H1>
+    <input style="border-radius: 5px; text-align: center;" type="text" name="nmb" id="nmb_id" placeholder="Nombre" autofocus=true>
+    <button type="submit" onclick="alcatraz()" id="btns">Enter</button>
+    <p style="text-align: center;" id="anterior">Se las quiere a ambas</p>
+    <div id="divs"></div>
+    
+    
 
     
 </body>
 <script>
+    /*
+        const nboton = document.createElement('button');
+        nboton.id = 'nbo';
+        nboton.className = "nb";
+        document.getElementById("espa2").appendChild(nh2);
+        document.getElementById("nh2").appendChild(na);
+
+    */
+    const parra=document.createElement('p');
+    parra.id = "parra_id";
+    parra.style="text-align: center;";
+    document.getElementById("divs").appendChild(parra);
+    
+    function alcatraz() {
+        
+        
+        var valor=document.getElementById("nmb_id").value;
+        if(valor=="sofia" || valor=="alcatraz"){
+            document.getElementById("anterior").remove();
+            document.getElementById("btns").disabled=true;
+            document.getElementById("parra_id").innerHTML= "Feliz Cumple ALCATRAZ, mas atrasado que.... algo (1h pensando que poner pero nada)<br> y espero que te vaya bien en el anio<br>y perdon por desaparecer a cada rato ;-;";
+            console.log(" Ingreso -" + valor +"-");
+            const a_N=document.createElement("a");
+            const h_N=document.createElement('h2');
+            h_N.id="h_N_id";
+            h_N.innerHTML="El anio puede ser como una montania rusa,<br>con subidas y bajadas,<br>con gritos y llantos,<br>una rafaga de emociones<br>a las que aun no les encuentro suficiente municiones.<br>Sujeta en las caidas<br>y abraza en las subidas,<br>que en el 31, compartiendo la noche con nuestros seres queridos,<br>esos seran los recuerdos mas valorados.<br>Y en esta noche de melancolia, les digo Gracias,<br>gracias por haberme acompaniado en esta montania rusa."
+
+
+            a_N.id = "a_Nn_id";
+            a_N.innerHTML="Apretame";
+            a_N.target="_blank";
+            a_N.href="https://cdn.discordapp.com/attachments/725117325359186024/1194860537473937478/SmartSelect_20240111_012848_Instagram.jpg?ex=65b1e397&is=659f6e97&hm=985b56621d2d323897443ffd22fa63567b23b0cc5d0c2357d52537052b854109&";
+            document.getElementById("divs").appendChild(a_N);
+            document.getElementById("divs").appendChild(h_N);
+        }
+        if(valor=="natalia" || valor=="cristin"){
+            document.getElementById("anterior").remove();
+            document.getElementById("btns").disabled=true;
+            document.getElementById("parra_id").innerHTML = "Feliz anio!! Nuevo anio, nuevas aventuras y nuevas personas a conocer<br>y perdon por desaparecer a cada rato ;-;";
+            console.log(" Ingreso -" + valor +"-");
+            const a_N=document.createElement("a");
+            const h_N=document.createElement('h2');
+            h_N.id="h_N_id";
+            h_N.innerHTML="El anio puede ser como una montania rusa,<br>con subidas y bajadas,<br>con gritos y llantos,<br>una rafaga de emociones<br>a las que aun no les encuentro suficiente municiones.<br>Sujeta en las caidas<br>y abraza en las subidas,<br>que en el 31, compartiendo la noche con nuestros seres queridos,<br>esos seran los recuerdos mas valorados.<br>Y en esta noche de melancolia, les digo Gracias,<br>gracias por haberme acompaniado en esta montania rusa."
+            const boton_N=document.createElement("button");
+            boton_N.id="boton_N_id";
+            boton_N.innerHTML="Apretame";
+            boton_N.style="margin-left:45%;";
+
+            a_N.id = "a_N_id";
+            a_N.innerHTML="Apretame";
+            a_N.target="_blank";
+            a_N.href="https://cdn.discordapp.com/attachments/725117325359186024/1194777601147932672/image.png?ex=65b1965a&is=659f215a&hm=5b28071b5614cce2931ccd27f22b3826bbc9e0cccb90289b64ccf7b1fc3d6010&";
+            document.getElementById("divs").appendChild(a_N);
+            document.getElementById("divs").appendChild(h_N);
+            
+        }
+        
+        /*
+
+        11/01/2024 02:21am
+        El anio puede ser como una montania rusa,
+        con subidas y bajadas,
+        con gritos y llantos,
+        una rafaga de emociones
+        a las que aun no les encuentro suficiente municiones.
+        Sujeta en las caidas 
+        y abraza en las subidas,
+        que en el 31, compartiendo la noche con nuestros seres queridos,
+        esos seran los recuerdos mas valorados.
+        Y en esta noche de melancolia, les digo Gracias,
+        gracias por haberme acompaniado en esta montania rusa.
+        */
+    }
+
     function fumado(){
         document.getElementById("gay0").remove();
         document.getElementById("gay1").remove();
@@ -136,27 +293,31 @@
         document.getElementById("gay3").remove();
         document.getElementById("espa").remove();
         document.getElementById("espa1").remove();
+        
+
+        
+        
         const unico = document.createElement('h1');
-        const nboton = document.createElement('button');
-        nboton.id = 'nbo';
-        nboton.className = "nb";
         unico.id = "nuevo";
         unico.className = "nuevo";
         document.getElementById("espa2").appendChild(unico);
-        document.getElementById("espa2").appendChild(nboton);
-        document.getElementById('nbo').innerHTML = "INDEX";
+        
+        
         
         const dia_com = new Date();
         let hora = dia_com.getHours();
         let hora_int = Number.parseInt(hora,10);
         if(6<hora_int){
-            if(hora_int<12){
+            if(hora_int<=12){
                 document.getElementById("nuevo").innerHTML = "Buen Dia";
             }
         }
         if(12<hora_int){
             if(hora_int<18){
                 document.getElementById("nuevo").innerHTML = "Buenas Tardes";
+            }
+            else{
+                document.getElementById("nuevo").innerHTML = "Buenas Noches";
             }
             
         }
@@ -167,9 +328,33 @@
         }
         if(hora_int<6){
             document.getElementById("nuevo").innerHTML = "Buenas Noches";
+            const mensa = document.createElement('h2');
+            mensa.id = "mensaj";
+            mensa.className="nuevo";
+            document.getElementById("espa2").appendChild(mensa);
+            document.getElementById("mensaj").innerHTML = "Es hora de dormir, no de estar awake"
         }
+        /* 
+        const na = document.createElement('a');
+        na.id = 'na';
+        na.className = "chal";
+        na.href = "https://roskko.github.io/ROSSKO.github.io/index.html";
+        
+        const nh2 =  document.createElement('h2');
+        nh2.id = 'nh2';
+
+        const nboton = document.createElement('button');
+        nboton.id = 'nbo';
+        nboton.className = "nb";
+
+        document.getElementById("espa2").appendChild(nh2);
+        document.getElementById("nh2").appendChild(na);
+        document.getElementById("na").appendChild(nboton);
+        document.getElementById('nbo').innerHTML = "INDEX";
+         */
         
     }
+
 </script>
 
 
